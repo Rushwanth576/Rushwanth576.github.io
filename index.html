@@ -1,0 +1,1511 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RUSHWANTH S P | Engineering Portfolio</title>
+
+  <meta name="description" content="RUSHWANTH S P's engineering portfolio showcasing robotics, manufacturing, automation, embedded systems, IoT, projects, certifications and motorsport experience.">
+
+  <style>
+    :root {
+      --bg: #06101f;
+      --panel: #0e1d32;
+      --panel-light: #12243b;
+      --text: #edf3fa;
+      --muted: #9aacc1;
+      --accent: #59e2b5;
+      --accent-glow: rgba(89, 226, 181, 0.28);
+      --border: #20334c;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      opacity: 0.8;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(6, 16, 31, 0.94);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: 0.9rem;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      padding: 90px 8%;
+      scroll-margin-top: 75px;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 480px;
+      height: 480px;
+      top: 5%;
+      left: -180px;
+      background: radial-gradient(
+        circle,
+        rgba(89, 226, 181, 0.16),
+        transparent 70%
+      );
+      filter: blur(20px);
+      z-index: -1;
+      animation: glow 5s ease-in-out infinite alternate;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      right: -160px;
+      bottom: 0;
+      background: radial-gradient(
+        circle,
+        rgba(52, 125, 255, 0.13),
+        transparent 70%
+      );
+      z-index: -1;
+    }
+
+    @keyframes glow {
+      from {
+        opacity: 0.5;
+        transform: scale(0.9);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1.15);
+      }
+    }
+
+    .tag {
+      color: var(--accent);
+      font-size: 0.82rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      padding: 9px 17px;
+      margin-bottom: 35px;
+      border: 1px solid var(--border);
+      background: rgba(14, 29, 50, 0.8);
+      border-radius: 30px;
+      color: var(--muted);
+    }
+
+    .hero-badge .dot {
+      width: 9px;
+      height: 9px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 15px var(--accent);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      50% {
+        box-shadow: 0 0 25px 5px var(--accent-glow);
+      }
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6.2vw, 5.5rem);
+      line-height: 1.2;
+      margin: 10px 0 25px;
+      letter-spacing: -2px;
+    }
+
+    .hero-name {
+      display: block;
+      white-space: nowrap;
+      font-size: 0.88em;
+      letter-spacing: -0.045em;
+    }
+
+    .highlight {
+      color: var(--accent);
+      text-shadow:
+        0 0 12px rgba(89, 226, 181, 0.35),
+        0 0 35px rgba(89, 226, 181, 0.2);
+    }
+
+    .intro {
+      max-width: 720px;
+      font-size: 1.15rem;
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 15px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 23px;
+      border-radius: 10px;
+      font-weight: bold;
+      border: 1px solid var(--border);
+      color: var(--text);
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #06140f;
+      border-color: var(--accent);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 25px var(--accent-glow);
+      opacity: 1;
+    }
+
+    /* GENERAL HEADINGS */
+
+    h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin-bottom: 40px;
+    }
+
+    /* ABOUT */
+
+    .about-box {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 35px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .about-box p + p {
+      margin-top: 18px;
+    }
+
+    /* SKILLS */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .skill-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      transition: 0.3s;
+    }
+
+    .skill-card:hover,
+    .project-card:hover,
+    .experience-card:hover,
+    .cert-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+    }
+
+    .skill-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 18px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tags span {
+      padding: 7px 13px;
+      background: var(--panel-light);
+      color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 25px;
+      font-size: 0.9rem;
+    }
+
+    /* PROJECTS */
+
+    .project-group {
+      margin-bottom: 65px;
+    }
+
+    .project-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .group-heading {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: 12px;
+    }
+
+    .group-heading h3 {
+      font-size: 1.55rem;
+    }
+
+    .group-number {
+      color: var(--accent);
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .group-description {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 27px;
+      transition: 0.3s;
+    }
+
+    .project-type {
+      color: var(--accent);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .project-card h3 {
+      font-size: 1.3rem;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      font-size: 0.96rem;
+      margin-bottom: 12px;
+    }
+
+    .project-card .project-links {
+      margin-top: auto;
+      padding-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .project-links a {
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    /* EXPERIENCE */
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .experience-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      transition: 0.3s;
+    }
+
+    .experience-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 7px;
+    }
+
+    .experience-card .role {
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    .experience-card p,
+    .experience-card li {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .experience-card ul {
+      padding-left: 20px;
+      margin-top: 12px;
+    }
+
+    .experience-card li {
+      margin-bottom: 8px;
+    }
+
+    /* CERTIFICATIONS */
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .cert-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 25px;
+      transition: 0.3s;
+    }
+
+    .cert-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .cert-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .cert-label {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 0.78rem;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ACHIEVEMENTS */
+
+    .achievement-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .achievement {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .achievement-icon {
+      color: var(--accent);
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    .achievement h3 {
+      margin-bottom: 5px;
+    }
+
+    .achievement p {
+      color: var(--muted);
+    }
+
+    /* CONTACT */
+
+    .contact-box {
+      background: linear-gradient(
+        135deg,
+        var(--panel),
+        #102b35
+      );
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 40px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 25px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 8%;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer span {
+      color: var(--accent);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 760px) {
+      header {
+        padding: 17px 6%;
+      }
+
+      nav {
+        gap: 13px;
+      }
+
+      nav a {
+        font-size: 0.85rem;
+      }
+
+      section {
+        padding: 65px 6%;
+      }
+
+      .hero {
+        min-height: 78vh;
+      }
+
+      .skills-grid,
+      .grid,
+      .experience-grid,
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-box,
+      .contact-box {
+        padding: 25px;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+        font-size: clamp(1.8rem, 6.2vw, 3rem);
+      }
+
+      .hero-name {
+        font-size: 0.84em;
+        letter-spacing: -0.045em;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .hero-name {
+        font-size: 0.76em;
+      }
+
+      .logo {
+        font-size: 1.25rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <header>
+    <a class="logo" href="#home">
+      RUSHWANTH S P<span>.</span>
+    </a>
+
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Robotics · Manufacturing · Automation
+      </div>
+
+      <div class="tag">Engineering Portfolio</div>
+
+      <h1>
+        Hello, I'm
+        <span class="highlight hero-name">RUSHWANTH S P.</span>
+      </h1>
+
+      <p class="intro">
+        Manufacturing Engineering student with a
+        Mechatronics background, exploring robotics,
+        embedded systems, IoT, automation and practical
+        engineering solutions.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a class="btn btn-primary" href="#projects">
+          Explore My Projects →
+        </a>
+
+        <a class="btn"
+           href="https://github.com/Rushwanth576"
+           target="_blank"
+           rel="noopener noreferrer">
+          GitHub Profile ↗
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+      <div class="tag">01 / About</div>
+
+      <h2>About Me</h2>
+
+      <div class="about-box">
+
+        <p>
+          I am a Manufacturing Engineering student at
+          Anna University, with a Diploma in Mechatronics
+          from Kongu Polytechnic College.
+        </p>
+
+        <p>
+          My interests include robotics, embedded systems,
+          computer vision, intelligent automation and
+          smart manufacturing. I enjoy combining mechanical
+          design, electronics and programming to explore
+          practical engineering applications.
+        </p>
+
+        <p>
+          Through academic projects, internships and
+          extracurricular activities, I continue to develop
+          my technical skills, teamwork and problem-solving
+          abilities.
+        </p>
+
+        <p>
+          I am particularly interested in robotics,
+          automation engineering and the future of
+          intelligent manufacturing.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+      <div class="tag">02 / Skills</div>
+
+      <h2>Technical Skills</h2>
+
+      <p class="section-intro">
+        A combination of engineering, programming,
+        embedded systems and design tools.
+      </p>
+
+      <div class="skills-grid">
+
+        <article class="skill-card">
+          <h3>Programming & Software</h3>
+
+          <div class="skill-tags">
+            <span>Python</span>
+            <span>C Programming</span>
+            <span>MATLAB</span>
+            <span>OpenCV</span>
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <h3>Engineering & Design</h3>
+
+          <div class="skill-tags">
+            <span>Manufacturing</span>
+            <span>Robotics</span>
+            <span>Automation</span>
+            <span>AutoCAD</span>
+            <span>SolidWorks</span>
+            <span>Mechanical Design</span>
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <h3>Embedded & IoT</h3>
+
+          <div class="skill-tags">
+            <span>Arduino</span>
+            <span>Raspberry Pi</span>
+            <span>ESP32</span>
+            <span>IoT</span>
+            <span>ThingSpeak</span>
+            <span>Sensor Integration</span>
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <h3>Simulation Tools</h3>
+
+          <div class="skill-tags">
+            <span>Wokwi</span>
+            <span>Tinkercad</span>
+            <span>MATLAB & Simulink</span>
+            <span>Computer Vision</span>
+            <span>PWM Simulation</span>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+      <div class="tag">03 / Projects</div>
+
+      <h2>Featured Projects</h2>
+
+      <p class="section-intro">
+        My projects are organized into two categories:
+        hardware-based engineering projects and
+        software-based projects and simulations.
+      </p>
+
+      <!-- SECTION 1: HARDWARE -->
+
+      <div class="project-group">
+
+        <div class="group-heading">
+          <span class="group-number">01</span>
+          <h3>Hardware-Based Projects</h3>
+        </div>
+
+        <p class="group-description">
+          Physical systems combining electronics,
+          sensors, controllers and engineering concepts.
+        </p>
+
+        <div class="grid">
+
+          <!-- AUTONOMOUS CAR -->
+
+          <article class="project-card">
+
+            <div class="project-type">
+              Hardware · Robotics · Computer Vision
+            </div>
+
+            <h3>Autonomous Self-Driving Car</h3>
+
+            <p>
+              A robotics project using Raspberry Pi 3 Model B+,
+              Arduino, a camera module, ultrasonic and IR
+              sensors, and an L298N motor driver.
+            </p>
+
+            <p>
+              The project explores lane detection,
+              obstacle avoidance, traffic signal and
+              signboard recognition, and autonomous
+              vehicle functions using computer vision.
+            </p>
+
+            <div class="project-links">
+              <a href="https://github.com/Rushwanth576"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                GitHub Profile ↗
+              </a>
+            </div>
+
+          </article>
+
+          <!-- SENTRISAFE -->
+
+          <article class="project-card">
+
+            <div class="project-type">
+              Hardware · IoT · Industrial Safety
+            </div>
+
+            <h3>SentriSafe – Smart Factory Monitoring</h3>
+
+            <p>
+              An ESP32-based factory monitoring and safety
+              concept designed to monitor environmental
+              conditions using sensors.
+            </p>
+
+            <p>
+              The system explores smoke and flame detection,
+              temperature and humidity monitoring,
+              ThingSpeak-based data visualization,
+              buzzer alerts and email notifications.
+            </p>
+
+            <div class="project-links">
+              <a href="https://share.google/cETiyhlPbI0NeSU0o"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Industrial Safety Monitoring ↗
+              </a>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+      <!-- SECTION 2: SOFTWARE -->
+
+      <div class="project-group">
+
+        <div class="group-heading">
+          <span class="group-number">02</span>
+          <h3>Software-Based Projects</h3>
+        </div>
+
+        <p class="group-description">
+          Programming, simulation, control systems,
+          software concepts and virtual prototyping.
+        </p>
+
+        <div class="grid">
+
+          <!-- BLUETOOTH COBOT -->
+
+          <article class="project-card">
+
+            <div class="project-type">
+              Software · Robotics · Simulation
+            </div>
+
+            <h3>Bluetooth Operated COBOT</h3>
+
+            <p>
+              A software-based collaborative robot concept
+              exploring Bluetooth communication,
+              command-based control and robotic movement
+              using simulated or programmed control logic.
+            </p>
+
+            <p>
+              Focus areas include communication,
+              control logic and human-robot interaction.
+            </p>
+
+            <div class="project-links">
+              <a href="https://share.google/7stRxUrm0L8ZORR4k"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Bluetooth COBOT – Wokwi ↗
+              </a>
+            </div>
+
+          </article>
+
+          <!-- SMART HOME INTRUDER -->
+
+          <article class="project-card">
+
+            <div class="project-type">
+              Software · Embedded Systems · Security
+            </div>
+
+            <h3>Smart Home Intruder System</h3>
+
+            <p>
+              A software-based smart home security concept
+              exploring intrusion detection, sensor input
+              processing and alert logic through a
+              simulated embedded system.
+            </p>
+
+            <p>
+              Focus areas include security monitoring,
+              conditional logic and notification concepts.
+            </p>
+
+            <div class="project-links">
+              <a href="https://wokwi.com/projects/455764810508976129"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Smart Home Intruder – Wokwi ↗
+              </a>
+            </div>
+
+          </article>
+
+          <!-- DC MOTOR PWM -->
+
+          <article class="project-card">
+
+            <div class="project-type">
+              Software · MATLAB · Motor Control
+            </div>
+
+            <h3>DC Motor PWM Simulation</h3>
+
+            <p>
+              A MATLAB and Simulink simulation exploring
+              PWM-based speed control of a Pro-Range
+              RS775 12V, 6000 RPM DC motor.
+            </p>
+
+            <p>
+              The simulation focuses on PWM duty cycle,
+              motor speed response and the relationship
+              between control input and motor behavior.
+            </p>
+
+          </article>
+
+          <!-- SOLAR COLD STORAGE -->
+
+          <article class="project-card">
+
+            <div class="project-type">
+              Software · Sustainable Engineering
+            </div>
+
+            <h3>Solar-Powered Smart Mini Cold Storage</h3>
+
+            <p>
+              A conceptual design for an energy-efficient,
+              solar-powered mini cold storage system
+              for preserving fresh vegetables.
+            </p>
+
+            <p>
+              The concept explores solar refrigeration,
+              thermal energy storage using phase change
+              materials, pre-cooling and decentralized
+              cold storage for the North Eastern Region.
+            </p>
+
+          </article>
+
+          <!-- LCD WITHOUT I2C -->
+
+          <article class="project-card">
+
+            <div class="project-type">
+              Software · Arduino · Circuit Simulation
+            </div>
+
+            <h3>LCD Interface Without I2C</h3>
+
+            <p>
+              An Arduino-based LCD interfacing simulation
+              demonstrating direct connections between
+              the microcontroller and LCD display.
+            </p>
+
+            <p>
+              Explores display initialization,
+              pin configuration and programmed
+              text output using parallel communication.
+            </p>
+
+            <div class="project-links">
+              <a href="https://www.tinkercad.com/things/e4sTOCGfJ4O-lcd-without-i2c"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                View LCD Without I2C ↗
+              </a>
+            </div>
+
+          </article>
+
+          <!-- LCD WITH I2C -->
+
+          <article class="project-card">
+
+            <div class="project-type">
+              Software · Arduino · Circuit Simulation
+            </div>
+
+            <h3>LCD Interface With I2C</h3>
+
+            <p>
+              An Arduino-based LCD simulation using
+              an I2C interface to simplify wiring
+              and enable programmed display output.
+            </p>
+
+            <p>
+              Explores I2C communication,
+              LCD interfacing and text display
+              using a reduced number of connections.
+            </p>
+
+            <div class="project-links">
+              <a href="https://www.tinkercad.com/things/guiKhkwY6TL-lcd-with-i2c"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                View LCD With I2C ↗
+              </a>
+            </div>
+
+          </article>
+
+          <!-- TRAFFIC SIGNAL -->
+
+          <article class="project-card">
+
+            <div class="project-type">
+              Software · Electronics · Simulation
+            </div>
+
+            <h3>Traffic Signal System</h3>
+
+            <p>
+              A simulated traffic light control system
+              exploring sequential LED operation,
+              timing logic and programmed signal cycles.
+            </p>
+
+            <div class="project-links">
+              <a href="https://www.tinkercad.com/things/amf8usE2Tic-traffic-signal-"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                View Traffic Signal ↗
+              </a>
+            </div>
+
+          </article>
+
+          <!-- AUTOMATIC STREET LIGHT -->
+
+          <article class="project-card">
+
+            <div class="project-type">
+              Software · Electronics · Automation
+            </div>
+
+            <h3>Automatic Street Light</h3>
+
+            <p>
+              A circuit simulation exploring automatic
+              lighting control using electronic inputs
+              and programmed switching logic.
+            </p>
+
+            <div class="project-links">
+              <a href="https://www.tinkercad.com/things/0NhxuJIRLne-street-light"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                View Street Light ↗
+              </a>
+            </div>
+
+          </article>
+
+          <!-- BLINKING LED -->
+
+          <article class="project-card">
+
+            <div class="project-type">
+              Software · Arduino · Digital Electronics
+            </div>
+
+            <h3>LED Blinking Simulation</h3>
+
+            <p>
+              A basic Arduino programming project
+              demonstrating digital output control,
+              LED interfacing and timed switching logic.
+            </p>
+
+            <div class="project-links">
+              <a href="https://www.tinkercad.com/things/4alXyFG2eWg-blinking-led"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                View Blinking LED ↗
+              </a>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- EXPERIENCE -->
+
+    <section id="experience">
+
+      <div class="tag">04 / Experience</div>
+
+      <h2>Experience</h2>
+
+      <p class="section-intro">
+        Industrial exposure, engineering activities
+        and collaborative technical experience.
+      </p>
+
+      <div class="experience-grid">
+
+        <article class="experience-card">
+
+          <h3>ACE Micromatic Pvt. Ltd.</h3>
+
+          <div class="role">
+            Observation Engineering Intern · May–June 2026
+          </div>
+
+          <p>
+            Completed a one-month observation engineering
+            internship, gaining industrial exposure
+            and an opportunity to observe engineering
+            practices in a manufacturing environment.
+          </p>
+
+        </article>
+
+        <article class="experience-card">
+
+          <h3>Electrical Domain</h3>
+
+          <div class="role">
+            Sleipnir Racing Club · CEG, Anna University
+          </div>
+
+          <p>
+            Member of the electrical domain of Sleipnir
+            Racing Club, a Formula Student racing team
+            at CEG, Anna University.
+          </p>
+
+          <ul>
+            <li>
+              Participate in a collaborative student
+              motorsport engineering environment.
+            </li>
+
+            <li>
+              Explore electrical and electronic systems
+              relevant to a Formula Student race car.
+            </li>
+
+            <li>
+              Develop teamwork, technical communication
+              and engineering problem-solving skills.
+            </li>
+
+            <li>
+              Contribute as part of a multidisciplinary
+              student racing team.
+            </li>
+          </ul>
+
+          <div class="project-links">
+            <a href="https://www.google.com/search?q=Sleipnir+Racing+CEG"
+               target="_blank"
+               rel="noopener noreferrer">
+              Learn About Sleipnir Racing ↗
+            </a>
+          </div>
+
+        </article>
+
+        <article class="experience-card">
+
+          <h3>Electrical Loco Shed</h3>
+
+          <div class="role">
+            Industrial Training · 21 Days
+          </div>
+
+          <p>
+            Completed a 21-day industrial training
+            experience at an electrical loco shed,
+            gaining exposure to railway electrical
+            systems and maintenance practices.
+          </p>
+
+        </article>
+
+        <article class="experience-card">
+
+          <h3>CEG Tech Forum</h3>
+
+          <div class="role">
+            HR Coordinator
+          </div>
+
+          <p>
+            Involved in student technical community
+            activities, coordination and teamwork
+            through the CEG Tech Forum.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- CERTIFICATIONS -->
+
+    <section id="certifications">
+
+      <div class="tag">05 / Certifications</div>
+
+      <h2>Certifications & Learning</h2>
+
+      <p class="section-intro">
+        Technical learning experiences that support
+        my interests in robotics, software and
+        intelligent engineering systems.
+      </p>
+
+      <div class="cert-grid">
+
+        <article class="cert-card">
+
+          <span class="cert-label">
+            Robotics & IoT
+          </span>
+
+          <h3>Corizo – IoT and Robotics</h3>
+
+          <p>
+            Completed a certification course covering
+            introductory Internet of Things and
+            robotics concepts, including the role
+            of connected devices, embedded systems
+            and automation in engineering applications.
+          </p>
+
+        </article>
+
+        <article class="cert-card">
+
+          <span class="cert-label">
+            Programming & AI
+          </span>
+
+          <h3>Machine Learning in Python</h3>
+
+          <p>
+            Completed a course introducing machine
+            learning concepts using Python, with
+            exposure to computational approaches
+            used in data analysis and intelligent
+            software applications.
+          </p>
+
+        </article>
+
+        <article class="cert-card">
+
+          <span class="cert-label">
+            Technical Development
+          </span>
+
+          <h3>Self-Directed Technical Learning</h3>
+
+          <p>
+            Continuing to develop practical knowledge
+            in MATLAB, Simulink, OpenCV, Arduino,
+            Raspberry Pi, embedded programming and
+            computer vision through engineering
+            projects and simulation exercises.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+
+    <section id="achievements">
+
+      <div class="tag">06 / Achievements</div>
+
+      <h2>Achievements & Activities</h2>
+
+      <div class="achievement-list">
+
+        <article class="achievement">
+
+          <div class="achievement-icon">✦</div>
+
+          <div>
+            <h3>Best Outgoing Student of the Year</h3>
+
+            <p>
+              Recognized with the Best Outgoing Student
+              of the Year award at Kongu Polytechnic
+              College.
+            </p>
+          </div>
+
+        </article>
+
+        <article class="achievement">
+
+          <div class="achievement-icon">✦</div>
+
+          <div>
+            <h3>Robo Race – PSG College</h3>
+
+            <p>
+              Participated in a robotics event,
+              gaining exposure to robot design,
+              competition and technical teamwork.
+            </p>
+          </div>
+
+        </article>
+
+        <article class="achievement">
+
+          <div class="achievement-icon">✦</div>
+
+          <div>
+            <h3>Robo Soccer – CEG</h3>
+
+            <p>
+              Participated in a robotics event
+              involving robot-based competition
+              and collaborative engineering activities.
+            </p>
+          </div>
+
+        </article>
+
+        <article class="achievement">
+
+          <div class="achievement-icon">✦</div>
+
+          <div>
+            <h3>Student Engineering Community</h3>
+
+            <p>
+              Engaged in technical activities through
+              CEG Tech Forum and Sleipnir Racing Club,
+              supporting collaboration and
+              multidisciplinary learning.
+            </p>
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+      <div class="tag">07 / Contact</div>
+
+      <div class="contact-box">
+
+        <h2>Let's Connect.</h2>
+
+        <p class="intro">
+          Interested in robotics, manufacturing,
+          automation, embedded systems or engineering
+          collaborations? Feel free to connect with me.
+        </p>
+
+        <div class="contact-links">
+
+          <a class="btn btn-primary"
+             href="https://github.com/Rushwanth576"
+             target="_blank"
+             rel="noopener noreferrer">
+            GitHub Profile ↗
+          </a>
+
+          <a class="btn"
+             href="https://www.linkedin.com/in/rushwanth-s-p-44433a2a5?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android"
+             target="_blank"
+             rel="noopener noreferrer">
+            LinkedIn ↗
+          </a>
+
+          <a class="btn"
+             href="mailto:rushwanthponnusamy576@gmail.com">
+            Email Me ↗
+          </a>
+
+          <a class="btn"
+             href="https://share.google/cETiyhlPbI0NeSU0o"
+             target="_blank"
+             rel="noopener noreferrer">
+            SentriSafe ↗
+          </a>
+
+          <a class="btn"
+             href="https://share.google/7stRxUrm0L8ZORR4k"
+             target="_blank"
+             rel="noopener noreferrer">
+            Wokwi ↗
+          </a>
+
+          <a class="btn"
+             href="https://www.tinkercad.com/dashboard/designs/all"
+             target="_blank"
+             rel="noopener noreferrer">
+            Tinkercad ↗
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 RUSHWANTH S P | Engineering Portfolio
+
+    <br>
+
+    Designed with <span>curiosity</span> and
+    a passion for engineering.
+
+  </footer>
+
+</body>
+</html>
